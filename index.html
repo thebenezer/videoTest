@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harvest Studio</title>
+    <title>iOS Video Demo</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,14 @@
         body {
             height: 100vh;
             overflow: hidden;
-            font-family: Arial, sans-serif;
+            font-family: 'Raleway', 'Helvetica', sans-serif;
+            font-size: 12px;
+            background: #fff;
+            color: #222222;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
         }
 
         .video-background {
@@ -33,28 +40,68 @@
             object-fit: cover;
         }
 
-        .content {
+        .main-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 1.5rem;
+            font-size: 15px;
+        }
+
+        .info-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 1.5rem;
             display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            height: 100vh;
-            color: white;
-            padding-bottom: 10vh;
+            flex-direction: column;
+            gap: 0.5rem;
         }
 
-        .logo {
-            max-width: 20%;
-            height: auto;
+        .info {
+            font-weight: 700;
         }
 
-        @media (max-width: 768px) {
-            .content {
-                padding-bottom: 20vh;
-            }
+        .code {
+            font-weight: 300;
+        }
 
-            .logo {
-                max-width: 90%;
-            }
+        p {
+            line-height: 0.6rem;
+        }
+
+        a,
+        a:active,
+        a:visited {
+            color: #2b84e0;
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            position: absolute;
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 2px;
+            bottom: 0px;
+            opacity: 0;
+            left: 0;
+            background: currentColor;
+            -webkit-transition: all 0.25s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -moz-transition: all 0.25s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -o-transition: all 0.25s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            transition: all 0.25s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+        }
+
+        a:hover::after {
+            height: 2px;
+            opacity: 1;
+            bottom: -1px;
+            -webkit-transition: all 0.25s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -moz-transition: all 0.25s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            -o-transition: all 0.25s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+            transition: all 0.25s cubic-bezier(0.190, 1.000, 0.220, 1.000);
         }
     </style>
 </head>
@@ -67,8 +114,13 @@
         </video>
     </div>
 
-    <div class="content">
-        <img src="harvest-logo.svg" alt="Harvest Studio" class="logo">
+    <div class="main-title">
+        Inline Video Demo
+    </div>
+    <div class="info-container">
+        <p class="code">code: <a href="https://github.com/thebenezer/videoTest">github</a></p>
+        <p class="code">demo by <a href="https://x.com/th_ebenezer">@thebenezer</a></p>
+        <p class="code">video from <a href="https://x.com/robably__">@rob</a></p>
     </div>
 </body>
 
